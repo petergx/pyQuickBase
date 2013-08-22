@@ -1,64 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="pyQuickBase : Python interface to the QuickBase API" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>pyQuickBase by kevinseelbach</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>pyQuickBase</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>pyQuickBase</h1>
+        <p>Python interface to the QuickBase API</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/kevinseelbach/pyQuickBase">View on GitHub</a>
+        <p class="view"><a href="https://github.com/kevinseelbach/pyQuickBase">View the Project on GitHub <small>kevinseelbach/pyQuickBase</small></a></p>
 
-          <h1 id="project_title">pyQuickBase</h1>
-          <h2 id="project_tagline">Python interface to the QuickBase API</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/kevinseelbach/pyQuickBase/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/kevinseelbach/pyQuickBase/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <ul>
+          <li><a href="https://github.com/kevinseelbach/pyQuickBase/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kevinseelbach/pyQuickBase/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kevinseelbach/pyQuickBase">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="pyquickbase-python-interface-to-quickbase-api" class="anchor" href="#pyquickbase-python-interface-to-quickbase-api"><span class="octicon octicon-link"></span></a>pyQuickBase: Python Interface to QuickBase API</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>pyQuickBase is an MIT licensed client library for the Intuit QuickBase
+<p>pyQuickBase is an MIT licensed client library for the Intuit QuickBase
 API, using <a href="http://docs.python-requests.org/en/latest/">Requests</a> for
-HTTP, and <a href="http://lxml.de/">lxml</a> for XML processing.</p>
+HTTP, and <a href="http://lxml.de/">lxml</a> is used for XML processing.</p>
 
-<h1>
-<a name="version" class="anchor" href="#version"><span class="octicon octicon-link"></span></a>Version</h1>
+<h2>
+<a name="version" class="anchor" href="#version"><span class="octicon octicon-link"></span></a>Version</h2>
 
-<h1>
-<a name="022" class="anchor" href="#022"><span class="octicon octicon-link"></span></a>0.2.2</h1>
+<h2>
+<a name="023" class="anchor" href="#023"><span class="octicon octicon-link"></span></a>0.2.3</h2>
 
 <ul>
-<li>  Just fixed the readme.</li>
-</ul><h1>
-<a name="021" class="anchor" href="#021"><span class="octicon octicon-link"></span></a>0.2.1</h1>
+<li>  Added a new return_file function to retrieve a QuickBase file as a
+Python file object.</li>
+</ul><h2>
+<a name="022" class="anchor" href="#022"><span class="octicon octicon-link"></span></a>0.2.2</h2>
+
+<ul>
+<li>  Fixed a readme issue.</li>
+</ul><h2>
+<a name="021" class="anchor" href="#021"><span class="octicon octicon-link"></span></a>0.2.1</h2>
 
 <ul>
 <li>  Made the package pip installable.</li>
 <li>  Added support for uploading files with add_record module.</li>
-</ul><h1>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>To install pyQuickBase, simply:</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>pip install pyquickbase
+<div class="highlight"><pre>pip install pyquickbase
 </pre></div>
 
-<h1>
-<a name="api-features" class="anchor" href="#api-features"><span class="octicon octicon-link"></span></a>API Features</h1>
+<h2>
+<a name="api-features" class="anchor" href="#api-features"><span class="octicon octicon-link"></span></a>API Features</h2>
 
 <ul>
 <li>  add_record</li>
@@ -72,15 +78,15 @@ HTTP, and <a href="http://lxml.de/">lxml</a> for XML processing.</p>
 <li>  granted_dbs</li>
 <li>  import_from_csv</li>
 <li>  list_db_pages</li>
-</ul><h1>
-<a name="other-modules" class="anchor" href="#other-modules"><span class="octicon octicon-link"></span></a>Other Modules</h1>
+</ul><h2>
+<a name="other-modules" class="anchor" href="#other-modules"><span class="octicon octicon-link"></span></a>Other Modules</h2>
 
 <ul>
 <li>  get_file -- used in conjunction with a query and specified
 attachment field ID, can download one or many files from a table to
 local folder.</li>
-</ul><h1>
-<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h1>
+</ul><h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
 <li>  Python (2.6+)</li>
@@ -90,30 +96,29 @@ local folder.</li>
 </li>
 <li>  chardet</li>
 <li>  cStringIO</li>
-</ul><h1>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h1>
+</ul><h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
 
 <p>Initialize the client:</p>
 
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">quickbase</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">client</span> <span class="o">=</span> <span class="n">quickbase</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">,</span>
-        <span class="n">apptoken</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-<span class="o">...</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">quickbase</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">quickbase</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">,</span>
+    <span class="n">apptoken</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
 
 <p>List all records in a table:</p>
 
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">datetime</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">do_query</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s">"'3'.XEX.''}"</span><span class="p">,</span> <span class="n">structured</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-        <span class="n">columns</span><span class="o">=</span><span class="s">'a'</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
-        <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s">'1'</span><span class="p">])</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%m-</span><span class="si">%d</span><span class="s">-%Y'</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">"Record ID# </span><span class="si">%s</span><span class="s"> was created on </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s">'3'</span><span class="p">],</span> <span class="n">dt</span><span class="p">)</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">do_query</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s">"'3'.XEX.''}"</span><span class="p">,</span> <span class="n">structured</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s">'a'</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s">'1'</span><span class="p">])</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%m-</span><span class="si">%d</span><span class="s">-%Y'</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">"Record ID# </span><span class="si">%s</span><span class="s"> was created on </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s">'3'</span><span class="p">],</span> <span class="n">dt</span><span class="p">)</span>
 <span class="o">...</span>
 </pre></div>
 
-<h1>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>MIT, See license file.</p>
 
@@ -121,8 +126,8 @@ local folder.</li>
 <a href="kevin.seelbach@gmail.com">email me directly</a> if you have questions or
 need help.</p>
 
-<h1>
-<a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a>Contribute</h1>
+<h2>
+<a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a>Contribute</h2>
 
 <ol>
 <li> Fork <a href="http://github.com/kevinseelbach/pyQuickBase">the repository</a>
@@ -132,16 +137,12 @@ branch off of it).</li>
 works as expected.</li>
 </ol>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">pyQuickBase maintained by <a href="https://github.com/kevinseelbach">kevinseelbach</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kevinseelbach">kevinseelbach</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -152,7 +153,6 @@ works as expected.</li>
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
