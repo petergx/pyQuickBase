@@ -13,6 +13,8 @@ except ImportError:
 import requests
 import chardet
 
+TIMEOUT = 10
+
 
 class Error(Exception):
     """A QuickBase API error. Negative error codes are non-QuickBase codes internal to
@@ -216,7 +218,7 @@ class Client(object):
             'Content-Type': 'application/xml',
             'QUICKBASE-ACTION': 'API_' + action,
         }
-        request = requests.post(url, data, headers=headers)
+        request = requests.post(url, data, headers=headers, timeout=TIMEOUT)
         response = request.content
         encoding = chardet.detect(response)['encoding']
 
@@ -442,7 +444,7 @@ class Client(object):
 
     def get_file(self, fname, folder, rid, fid, database=None):
         url = self.base_url + '/up/' + database + '/a/r' + rid + '/e' + fid + '/v0'
-        r = requests.get(url)
+        r = requests.get(url, timeout=TIMEOUT)
         response = r.content
         if not os.path.isdir(folder):
             os.makedirs(folder)
@@ -454,7 +456,7 @@ class Client(object):
 
     def return_file(self, url):
         headers = {'Cookie': 'ticket=%s' % self.ticket }
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=TIMEOUT)
         return os.path.basename(url), response.content
 
 if __name__ == '__main__':
