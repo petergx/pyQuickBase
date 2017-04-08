@@ -154,6 +154,46 @@ class Client(object):
         return rows
 
     @classmethod
+    def _parse_users(cls, response):
+        """Parse API_UserRoles response into three dicts:
+           1. users: dict of dicts with user id key
+           2. groups: dict of groups
+           3. roles: dict of role ID, role name assigned to at least 1 user
+        """
+        users_dict = {}
+        groups_dict = {}
+        roles_dict = {}
+        users = response.xpath('.//user')
+        if users:
+            for u in users:
+                id = u.get('id')
+                # roles and users are both in the "<users>" block
+                if (u.get('type') == 'user'):
+                    users_dict[id] = {
+                        'firstName': u.xpath('.//firstName')[0].text,
+                        'lastName': u.xpath('.//lastName')[0].text,
+                        'lastAccess': u.xpath('.//lastAccess')[0].text,
+                        'roles': [],
+                        }
+                    user_roles = u.xpath('.//role')
+                    for r in user_roles:
+                        role_id = r.get('id')
+                        users_dict[id]['roles'].append(role_id)
+                        roles_dict[role_id] = r.xpath('.//name')[0].text
+                elif (u.get('type') == 'group'):
+                    groups_dict[id] = {
+                        'name': u.xpath('.//name')[0].text,
+                        'roles': [],
+                        }
+                    group_roles = u.xpath('.//role')
+                    for r in user_roles:
+                        role_id = r.get('id')
+                        groups_dict[id]['roles'].append(role_id)
+                        roles_dict[role_id] = r.xpath('.//name')[0].text
+        return users_dict, groups_dict, roles_dict
+
+
+    @classmethod
     def _parse_db_page(cls, response):
         """Parse DBPage from QuickBase"""
         r = response.xpath('.//pagebody/text()')
@@ -420,6 +460,12 @@ class Client(object):
 
         response = self.request('GrantedDBs', database or self.database, request)
         return response
+
+    def user_roles(self, database=None):
+        """Returns list of dicts containing QB user & role info"""
+        request = {}
+        response = self.request('UserRoles', database or self.database, request)
+        return self._parse_users(response)
 
     def list_db_pages(self, database=None):
         request = {}
